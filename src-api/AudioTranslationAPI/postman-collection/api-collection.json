@@ -1,0 +1,101 @@
+{
+    "info": {
+        "name": "Microsoft Graph API - Teams Messaging",
+        "_postman_id": "12345678-1234-1234-1234-123456789abc",
+        "description": "Postman collection to test Microsoft Graph API for Teams messaging.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Generate Access Token",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    }
+                ],
+                "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [
+                        {
+                            "key": "client_id",
+                            "value": "<YOUR_CLIENT_ID>",
+                            "type": "text"
+                        },
+                        {
+                            "key": "client_secret",
+                            "value": "<YOUR_CLIENT_SECRET>",
+                            "type": "text"
+                        },
+                        {
+                            "key": "scope",
+                            "value": "https://graph.microsoft.com/.default",
+                            "type": "text"
+                        },
+                        {
+                            "key": "grant_type",
+                            "value": "client_credentials",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "url": {
+                    "raw": "https://login.microsoftonline.com/<TENANT_ID>/oauth2/v2.0/token",
+                    "protocol": "https",
+                    "host": [
+                        "login",
+                        "microsoftonline",
+                        "com"
+                    ],
+                    "path": [
+                        "<TENANT_ID>",
+                        "oauth2",
+                        "v2.0",
+                        "token"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Send Message to Teams Channel",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer <ACCESS_TOKEN>",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"body\": {\n    \"content\": \"Hello, this is a test message from Postman!\"\n  }\n}"
+                },
+                "url": {
+                    "raw": "https://graph.microsoft.com/v1.0/teams/<TEAM_ID>/channels/<CHANNEL_ID>/messages",
+                    "protocol": "https",
+                    "host": [
+                        "graph",
+                        "microsoft",
+                        "com"
+                    ],
+                    "path": [
+                        "v1.0",
+                        "teams",
+                        "<TEAM_ID>",
+                        "channels",
+                        "<CHANNEL_ID>",
+                        "messages"
+                    ]
+                }
+            }
+        }
+    ]
+}
