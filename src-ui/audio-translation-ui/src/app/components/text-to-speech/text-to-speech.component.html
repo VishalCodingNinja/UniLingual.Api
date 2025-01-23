@@ -1,0 +1,8 @@
+<h2>Text to Speech</h2>
+<div>
+    <label>Text:</label>
+    <textarea [(ngModel)]="text"></textarea>
+</div>
+<button (click)="convertTextToSpeech()">Convert</button>
+<audio *ngIf="audioUrl" [src]="audioUrl" controls></audio>
+<p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>

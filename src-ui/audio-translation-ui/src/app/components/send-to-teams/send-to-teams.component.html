@@ -1,0 +1,16 @@
+<h2>Send Message to Teams</h2>
+<div>
+    <label>Team ID:</label>
+    <input type="text" [(ngModel)]="teamId" />
+</div>
+<div>
+    <label>Channel ID:</label>
+    <input type="text" [(ngModel)]="channelId" />
+</div>
+<div>
+    <label>Message:</label>
+    <textarea [(ngModel)]="message"></textarea>
+</div>
+<button (click)="sendMessage()">Send</button>
+<p *ngIf="responseMessage" style="color: green;">{{ responseMessage }}</p>
+<p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>

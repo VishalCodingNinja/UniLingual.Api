@@ -1,0 +1,23 @@
+<h2>Custom Text to Speech</h2>
+
+<div>
+    <label>Text:</label>
+    <textarea [(ngModel)]="text"></textarea>
+</div>
+
+<div *ngIf="isRecording">
+    <p>Recording Time: {{ recordedTime }} seconds</p>
+</div>
+
+<button (click)="startRecording()" [disabled]="isRecording">Start Recording</button>
+<button (click)="stopRecording()" [disabled]="!isRecording">Stop Recording</button>
+<button (click)="convertTextToSpeech()" [disabled]="!recordedAudio || isRecording || !text">
+    Convert
+</button>
+
+<div *ngIf="isLoading" class="loading-indicator">
+    <p>Processing... Please wait.</p>
+</div>
+
+<audio *ngIf="audioUrl" [src]="audioUrl" controls></audio>
+<p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>

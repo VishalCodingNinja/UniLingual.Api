@@ -1,0 +1,22 @@
+nav {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+nav a {
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+    color: #007bff;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.loading-indicator {
+    color: blue;
+    font-weight: bold;
+}

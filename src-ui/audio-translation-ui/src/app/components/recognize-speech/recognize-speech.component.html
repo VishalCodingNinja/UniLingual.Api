@@ -1,0 +1,4 @@
+<h2>Recognize Speech</h2>
+<input type="file" (change)="onFileSelected($event)" />
+<p *ngIf="recognizedText">Recognized Text: {{ recognizedText }}</p>
+<p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>

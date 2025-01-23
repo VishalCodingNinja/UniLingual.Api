@@ -1,0 +1,29 @@
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+a:hover {
+    text-decoration: underline;
+}

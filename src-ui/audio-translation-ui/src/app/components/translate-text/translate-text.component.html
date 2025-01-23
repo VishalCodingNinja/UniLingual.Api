@@ -1,0 +1,12 @@
+<h2>Translate Text</h2>
+<div>
+    <label>Text:</label>
+    <textarea [(ngModel)]="text"></textarea>
+</div>
+<div>
+    <label>Target Language:</label>
+    <input type="text" [(ngModel)]="toLanguage" placeholder="e.g., en, es, fr" />
+</div>
+<button (click)="translate()">Translate</button>
+<p *ngIf="translatedText">Translated Text: {{ translatedText }}</p>
+<p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>
