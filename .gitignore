@@ -39,7 +39,7 @@ bld/
 #wwwroot/
 
 #ignore the appsettings.json secrets
-/src-api/AudioTranslationAPI/appsettings.json
+src-api/AudioTranslationAPI/appsettings.json
 
 # Visual Studio 2017 auto generated files
 Generated\ Files/
@@ -365,3 +365,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /src-ui/audio-translation-ui/.vscode
+/src-api/AudioTranslationAPI/appsettings.json
